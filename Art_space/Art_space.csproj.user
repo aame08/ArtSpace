@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\AccountUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddExhibit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AllExhibits.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AllReviews.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Authorization.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditExhibit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ExhibitInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ManagingEvaluations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ManagingFavorites.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ManagingReviews.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Registration.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UCExhibit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddExhibit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AllExhibits.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AllReviews.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Authorization.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditExhibit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ExhibitInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ManagingEvaluations.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ManagingFavorites.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ManagingReviews.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Registration.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UCExhibit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

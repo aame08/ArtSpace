@@ -1,0 +1,124 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewsModels\**" />
+    <EmbeddedResource Remove="ViewsModels\**" />
+    <None Remove="ViewsModels\**" />
+    <Page Remove="ViewsModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="icon.png" />
+    <None Remove="Resources\dk.png" />
+    <None Remove="Resources\Автопортрет.jpg" />
+    <None Remove="Resources\Битва кентавров.jpg" />
+    <None Remove="Resources\Битва кентавров1.jpg" />
+    <None Remove="Resources\Битва кентавров2.jpg" />
+    <None Remove="Resources\Битва кентавров3.jpg" />
+    <None Remove="Resources\Битва кентавров4.jpg" />
+    <None Remove="Resources\Битва кентавров5.jpg" />
+    <None Remove="Resources\Воскресший Христос.jpg" />
+    <None Remove="Resources\Дама с единорогом.jpg" />
+    <None Remove="Resources\Мона Лиза.jpg" />
+    <None Remove="Resources\Распятие.jpg" />
+    <None Remove="Resources\Рождение_Венеры.jpg" />
+    <None Remove="Resources\Рождение_Венеры2.jpg" />
+    <None Remove="Resources\Страшный суд.jpg" />
+    <None Remove="Resources\Страшный суд2.jpg" />
+    <None Remove="Resources\Страшный суд3.jpg" />
+    <None Remove="Resources\Страшный суд4.jpg" />
+    <None Remove="Resources\Страшный суд5.jpg" />
+    <None Remove="Resources\Тайная вечеря.jpg" />
+    <None Remove="Resources\Цветущие ветки миндаля.jpg" />
+    <None Remove="Resources\Череп с горящей сигаретой.jpg" />
+    <None Remove="Views\ava.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpressMvvm" Version="23.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icon.png" />
+    <Resource Include="Resources\Автопортрет.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Битва кентавров.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Битва кентавров1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Битва кентавров2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Битва кентавров3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Битва кентавров4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Воскресший Христос.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Дама с единорогом.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Мона Лиза.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Распятие.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Рождение_Венеры.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Рождение_Венеры2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Страшный суд.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Страшный суд2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Страшный суд3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Страшный суд4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Страшный суд5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Тайная вечеря.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Цветущие ветки миндаля.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Череп с горящей сигаретой.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\ava.png" />
+  </ItemGroup>
+
+</Project>

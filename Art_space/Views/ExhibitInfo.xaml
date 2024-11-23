@@ -1,0 +1,186 @@
+﻿<Page x:Class="Art_space.Views.ExhibitInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Art_space.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="ExhibitInfo">
+
+    <ScrollViewer>
+        <Grid Background="#E2E2E2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="bExit" Content="×" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="20" Click="bExit_Click"/>
+
+            <TextBlock Text="{Binding Exhibit.NameExhibit}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" TextWrapping="WrapWithOverflow"/>
+            <TextBlock Text="{Binding AverageRating, StringFormat='☆ {0:F1}'}" FontSize="20" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="bPrev" Content="🠔" BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" Height="25" Width="25" Grid.Column="0" Grid.Row="0" Command="{Binding PrevImageWnd}"/>
+                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="5" Padding="5" Grid.Column="1" Grid.Row="0">
+                        <Image x:Name="imageExhibit" Source="{Binding ImageSource}" MaxHeight="400" MaxWidth="400"/>
+                    </Border>
+                    <Button x:Name="bNext" Content="🠖" BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" Height="25" Width="25" Grid.Column="2" Grid.Row="0" Command="{Binding NextImageWnd}"/>
+                </Grid>
+
+                <Grid Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ItemsControl ItemsSource="{Binding Authors}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding NameAuthor, StringFormat='{}{0}'}" Margin="0,0,5,0"/>
+                                        <TextBlock Text="{Binding SurnameAuthor, StringFormat='{}{0}'}" Margin="0,0,5,0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+
+                    <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock TextWrapping="WrapWithOverflow">
+                            <Run Text="{Binding Exhibit.NameExhibit}" FontWeight="Bold"/>
+                            <Run Text="."/>
+                            <Run Text="{Binding Exhibit.YearCreation}"/>
+                            <Run Text=","/>
+                            <Run Text="{Binding Exhibit.CountryCreation}"/>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock TextWrapping="WrapWithOverflow">
+                            <Run Text="{Binding EpochName}"/>
+                            <Run Text="."/>
+                            <Run Text="{Binding GenreName}"/>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ItemsControl ItemsSource="{Binding TechniqueOfExecutions}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding NameET, StringFormat='{}{0} '}" Margin="0,0,5,0"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+
+                    <Grid Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock TextWrapping="WrapWithOverflow">
+                            <Run Text="{Binding StorageLocation.NameSL}"/>
+                            <Run Text=","/>
+                            <Run Text="{Binding StorageLocation.City}"/>
+                            <Run Text=","/>
+                            <Run Text="{Binding StorageLocation.Country}"/>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+                <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Padding="5" Margin="5">
+                    <TextBlock Text="{Binding Exhibit.DescriptionExhibit}" VerticalAlignment="Top" HorizontalAlignment="Stretch" TextWrapping="WrapWithOverflow" FontSize="16"/>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" Margin="5, 0, 5, 5">
+                    <TextBlock Text="Понравился экспонат? Добавьте его в Избранное." FontWeight="Bold" FontSize="20"/>
+                    <Button Content="Добавить" Style="{StaticResource GrayButton}" Margin="5, 0, 0, 0" Height="25" Command="{Binding AddToFavoriteWnd}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="5, 0, 5, 5">
+                    <TextBlock Text="Оставить отзыв и оценку экспонату" FontWeight="Bold" FontSize="20"/>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="5, 5, 0, 0">
+                        <TextBlock Text="Общая оценка: " FontSize="16"/>
+                        <ComboBox x:Name="cbEvaluation" Width="135" ItemsSource="{Binding Evaluations}" SelectedItem="{Binding SelectedEvaluation}"/>
+                    </StackPanel>
+                    
+                    <Grid Margin="5, 5, 0, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Текст отзыва: " FontSize="16" VerticalAlignment="Center" Grid.Column="0"/>
+                        <TextBox FontSize="16" TextWrapping="Wrap" Height="30" Grid.Column="1" Text="{Binding TextReview, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                    
+                    <Button Content="Отправить" BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" Height="25" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5, 5, 0, 5" Command="{Binding SendEvaluationReviewWnd}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="5, 0, 5, 0">
+                    <TextBlock Text="Отзывы пользователей: " FontWeight="Bold" FontSize="20"/>
+                    
+                    <ListView x:Name="lvReviews" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Reviews}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#242424" BorderThickness="1" CornerRadius="3">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Text="{Binding IdUserNavigation.Login}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="5, 0, 0, 0" TextWrapping="Wrap" FontWeight="Black"/>
+                                        <TextBlock Text="{Binding DateReview}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                                        <TextBlock Text="{Binding TextReview}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="5, 0, 5, 0" VerticalAlignment="Stretch" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                                        <Button Content="Пожаловаться" Style="{StaticResource GrayButton}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Command="{Binding DataContext.ComplainWnd, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
